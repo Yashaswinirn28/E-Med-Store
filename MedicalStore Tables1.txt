@@ -1,0 +1,119 @@
+Create Database MedStoreData;
+
+use MedStoreData;
+
+
+
+Create table AdminLoginTab
+(uName varchar(50),
+pWord varchar(50));
+
+insert into adminLogintab values('admin','admin');
+
+
+Create table QualificationTab
+(edName varchar(50),
+details varchar(50));
+
+Create table ProfessionTab
+(jobName varchar(50),
+details varchar(50));
+
+
+Create table CategoryTab
+(CategoryName varchar(50),
+details varchar(50));
+
+drop table ProductTab;
+Create table ProductTab
+(Prodcode varchar(50),
+prodName  varchar(50),
+details  varchar(250),
+category  varchar(50),
+pimage longblob,
+sprice int,
+remarks varchar(50));
+
+
+
+drop table CustDetTab;
+Create table CustDetTab
+(uName varchar(50),
+pWord varchar(50),
+custName varchar(50),
+cAdd varchar(250),
+phonenos  varchar(50),
+email  varchar(50),
+qualification  varchar(50),
+designation  varchar(50),
+custimage longblob,
+ccNo   varchar(20),
+validdate varchar(50),
+bankname varchar(50),
+approved varchar(1));
+
+
+
+
+
+Create table tCartTab
+(sId varchar(50),
+custcode  varchar(50),
+productCode varchar(50),
+qty int,
+price int,
+totamt int);
+
+
+drop table mCartTab;
+Create table mCartTab
+(billNo int,
+billDate date,
+slNo int,
+custcode  varchar(50),
+productCode varchar(50),
+qty int,
+price int,
+totamt int,
+bType tinyint);
+
+insert into mCartTab(billNo) values(1000);
+
+
+Create table PayDetTab
+(billNo varchar(50),
+custcode  varchar(50),
+ptype  varchar(50),
+carddet   varchar(250),
+deldet   varchar(250));
+
+Create table TranTab
+(tranNo int,
+tranDate date,
+ccNo  varchar(20), 
+details  varchar(50),
+dbamt int,
+cramt int,
+rem1   varchar(250));
+
+insert into TranTab(TranNo) values(1000);
+
+
+Create table CustLogTab
+(LogNo int,
+LoginDate date,
+LoginTime varchar(10),
+LogOutDate date,
+LogOutTime varchar(10),
+custcode  varchar(50));
+
+insert into CustLogTab(LogNo) values(1000);
+
+
+Create table FAQTab
+(qno int,
+question varchar(250),
+Answer varchar(250));
+
+Insert into faqtab(qno) values(1000);
+
